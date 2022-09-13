@@ -1,4 +1,7 @@
 <template>
+  <span>{{ getHumanDate("09-06-2020") }}</span>
+  <a href="#" class="btn btn-danger">ciao</a>
+
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
@@ -31,10 +34,17 @@
 </template>
 
 <script>
+  import moment from 'moment'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    getHumanDate : function (date) {
+                return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+            }
   }
 }
 </script>
